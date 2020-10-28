@@ -42,6 +42,8 @@ select::-ms-expand {
   min-width: 850px;
   padding: 50px 35px;
   box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 // searchResults
@@ -49,6 +51,7 @@ select::-ms-expand {
   color: $zoffBlue;
   text-align: center;
   margin: 0 auto 25px;
+  width: 100%;
   p {
     margin-bottom: 5px;
   }
@@ -59,6 +62,11 @@ select::-ms-expand {
 }
 
 // refinement
+form[name="from"]{
+  width: calc( 75% - 35px );
+  margin-right: 35px;
+}
+
 .refinement {
   width: 480px;
   margin: 0 auto;
@@ -224,7 +232,6 @@ select::-ms-expand {
 // itemList
 .itemList {
   width: 100%;
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -267,12 +274,13 @@ select::-ms-expand {
 
 // contentsList
 .contentsList {
-  border-top: 1px solid $lightGray;
+  border-left: 1px solid $lightGray;
+  box-sizing: border-box;
+  width: 25%;
+  padding-left: 30px;
+  padding-bottom: 30px;
   h2 {
-    color: $zoffBlue;
-    font-weight: normal;
-    text-align: center;
-    margin: 50px 0;
+    display: none;
   }
   ul {
     display: flex;
@@ -280,9 +288,8 @@ select::-ms-expand {
     justify-content: space-between;
   }
   li {
-    flex-basis: 48%;
-    max-width: 48%;
-    margin: 0 0 60px;
+    width: 100%;
+    margin: 0 0 30px;
     a {
       color: #000;
       display: flex;
